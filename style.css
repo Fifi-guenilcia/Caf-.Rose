@@ -1,0 +1,153 @@
+/*rest des styles par defaut pour s'assurer que le navigateurs affichent le site*/
+*{
+    margin:0; /*margin externe est remit à 0*/
+    padding: 0; /*margin interne est remuis à 0*/
+    box-sizing: border-box; /*permet à chaque element de garde sa taille correct*/
+    font-family: Arial,sans-serif; /*police d'ecrire*/
+}
+
+/*============ header=============*/
+
+/*container de l'entête*/
+header{
+    background-color:black; /*couleur de fond noire*/
+    opacity: 0.8; /*rend la couleur du header légé et transparente*/
+    padding: 15px 5%; /*ajouter les margin internes (15px en haut et bas, 5% a gauche et a droite*/
+}
+/*Div: mettre le style de div le logo à gauche et le menu à droite*/
+.nav-container{
+    display: flex; /*aligner les élément sur une seule ligne*/
+    justify-content: space-between; /*justify-content: Espacer les éléments aligné avec display */
+    align-items: center; /*aligner les éléments verticalement dans notre header*/
+    max-width: 1200px; /*largeur maximale pour les grands écrans*/
+    margin: auto; /*margin:auto pour aligner le div au centre de header*/
+}
+
+/*stylisé le logo*/
+.logo{
+    color: pink; /*couleur rose*/
+    font-size: 24px; /*taille de texte*/
+    font-weight: bold; /*le texte sera plus epais*/
+}
+.logo span{
+    color: white; /*couleur blanche*/
+}
+
+.nav-links{
+    list-style: none; /*enlever ou mettre les puces dans une liste*/
+    display: flex; /*aligner les éléments sur une ligne*/
+}
+.nav-links li{
+    margin-left: 20px; /*créer de l'espace à gauche de chaque élément de la liste*/
+}
+.nav-links a{
+    text-decoration: none; /*enlever le soulignement par defaut*/
+    color: white;
+    font-size: 18px;
+}
+/*image principale*/
+
+.hero img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*section qui contient le formulaire à gauche et la video à droite */
+.content-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px 0px;
+}
+/*style du div qui contient le formulaire à gauche et la video à droite*/
+.form-section{
+    width: 45%;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/*style du titre du formulaire*/
+.form-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*style du label*/
+form label{
+    display: block;
+    margin-top: 10px;
+}
+
+/*style du champ input*/
+form input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/*style du bouton du formulaire*/
+button{
+    background-color: pink;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin-top: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+/*=================video==============*/
+.video-section{
+    width: 45%;
+}
+
+/*style de la video*/
+.video-section video{
+    width:100%;
+    border-radius: 8px;
+}
+/*==============PIED DE PAGE (footer)*/
+footer{
+    background-color:black;
+    opacity: 0.8;
+    color: white;
+    padding: 2%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*==============RESPONSIVE=======*/
+/*Règle css appliqué aux écrans de taille inférieure à 768px*/
+/*le bloc des appareils inferieur tels que les téléphones*/
+@media(max-width:768px){
+    .nav-container{
+        flex-direction: column; /*mettre le logo et le menu en colonne*/
+        text-align: center;/*centrer la zone*/
+    }
+    /*mettre les elements du menu en colonne*/
+    .nav-links{
+        flex-direction: column; /*place des elements les uns au dessous des autres*/
+        margin-top: 10px; /*ajouter un petit espace au dessus*/
+    }
+    .nav-links li{
+        margin: 5px 0;
+    }
+    /*section où le formulaire est à gauche et la video à droite*/
+    .content-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    /*adopté les enfants de section dans le formulaire à gauche et la video à droite*/
+   .form-section, .video-section{
+        width: 100%;
+        margin: 20px;
+    }
+}
